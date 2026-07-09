@@ -1,0 +1,32 @@
+services:
+  python:
+    image: python-security
+    stdin_open: true
+    tty: true
+    command: sleep infinity
+    volumes:
+      - .:/workspace
+
+  rust:
+    image: rust-security
+    stdin_open: true
+    tty: true
+    command: sleep infinity
+    volumes:
+      - .:/workspace
+
+  node:
+    image: node-security
+    stdin_open: true
+    tty: true
+    command: sleep infinity
+    volumes:
+      - .:/workspace
+
+  go:
+    image: go-security
+    stdin_open: true
+    tty: true
+    command: sleep infinity
+    volumes:
+      - .:/workspace

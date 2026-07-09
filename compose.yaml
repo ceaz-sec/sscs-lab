@@ -1,0 +1,25 @@
+services:
+  sscs-base:
+    image: sscs-base
+    build:
+      context: ./sandboxes/sscs-base
+
+  node:
+    image: node-security
+    build:
+      context: ./sandboxes/node
+
+  python:
+    image: python-security
+    build:
+      context: ./sandboxes/python
+
+  rust:
+    image: rust-security
+    build:
+      context: ./sandboxes/rust
+
+  go:
+    image: go-security
+    build:
+      context: ./sandboxes/go
