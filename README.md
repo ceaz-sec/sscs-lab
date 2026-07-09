@@ -56,7 +56,7 @@ sscs-lab/
 Each ecosystem is analyzed in an isolated sandbox.
 
 ## Investigation Process
-
+ 
 1. Collect package metadata
 2. Review source and build artifacts
 3. Verify integrity and provenance

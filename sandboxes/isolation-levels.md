@@ -7,3 +7,4 @@
 | gVisor                  | Analyze higher-risk samples while reducing kernel attack surface.                |
 | QEMU/KVM snapshots      | Full-system malware analysis, persistence testing, or suspected escape attempts. |
 
+

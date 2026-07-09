@@ -1,4 +1,4 @@
-# SSCS Intelligences Resources
+# SSCS Intelligences Resourcesi
 
   - OSV.dev
   - OpenCVE
@@ -6,3 +6,5 @@
   - OpenSSF Scorecard
   - MITRE CVE Program
   - MITRE ATT&CK
+
+  ----
