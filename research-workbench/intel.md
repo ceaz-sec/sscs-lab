@@ -1,4 +1,4 @@
-# SSCS Intelligences Resourcesi
+# SSCS Intelligences Resources
 
   - OSV.dev
   - OpenCVE
