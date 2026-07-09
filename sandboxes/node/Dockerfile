@@ -1,8 +1,10 @@
 FROM sscs-base
-
-RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
-    apt-get update && \
-    apt-get install -y nodejs && \
-    npm install -g pnpm
-
-WORKDIR /workspace
+USER root
+RUN apk add --no-cache nodejs npm
+USER devsec
+ENV NPM_CONFIG_PREFIX=/home/devsec/.npm-global
+ENV PATH="/home/devsec/.npm-global/bin:${PATH}"
+RUN npm install -g \
+        pnpm \
+        npm-check-updates
+WORKDIR /home/devsec/workspace

@@ -1,6 +1,9 @@
-FROM alpine:latest
+FROM debian:bookworm-slim
 
-RUN apk add --no-cache \
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
         bash \
         ca-certificates \
         curl \
@@ -8,17 +11,19 @@ RUN apk add --no-cache \
         git \
         jq \
         ripgrep \
-        fd \
+        fd-find \
         file \
-        vim \
+        vim-common \
         neovim \
         tcpdump \
         tshark \
         yara \
         hexyl \
+        binwalk \
+        diffoscope \
         unzip \
-        xz \
-        shadow
+        xz-utils && \
+    rm -rf /var/lib/apt/lists/*
 
 # Syft
 RUN curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh \
@@ -31,4 +36,5 @@ RUN curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh \
 RUN useradd -m -u 1000 devsec
 
 WORKDIR /workspace
+
 CMD ["/bin/bash"]
