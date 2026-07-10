@@ -1,4 +1,14 @@
 services:
+  sscs-base:
+    image: sscs-base
+    stdin_open: true
+    tty: true
+    command: sleep infinity
+    volumes:
+      - .:/workspace
+    environment:
+      - GITHUB_AUTH_TOKEN=${GH_AUTH_TOKEN}
+
   python:
     image: python-security
     stdin_open: true
@@ -6,6 +16,8 @@ services:
     command: sleep infinity
     volumes:
       - .:/workspace
+    environment:
+      - GITHUB_AUTH_TOKEN=${GH_AUTH_TOKEN}
 
   rust:
     image: rust-security
@@ -14,6 +26,8 @@ services:
     command: sleep infinity
     volumes:
       - .:/workspace
+    environment:
+      - GITHUB_AUTH_TOKEN=${GH_AUTH_TOKEN}
 
   node:
     image: node-security
@@ -22,6 +36,8 @@ services:
     command: sleep infinity
     volumes:
       - .:/workspace
+    environment:
+      - GITHUB_AUTH_TOKEN=${GH_AUTH_TOKEN}
 
   go:
     image: go-security
@@ -30,3 +46,5 @@ services:
     command: sleep infinity
     volumes:
       - .:/workspace
+    environment:
+      - GITHUB_AUTH_TOKEN=${GH_AUTH_TOKEN}

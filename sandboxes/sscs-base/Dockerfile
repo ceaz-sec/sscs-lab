@@ -8,6 +8,7 @@ RUN apk add --no-cache \
         git \
         jq \
         ripgrep \
+        tar \
         fd \
         file \
         vim \
@@ -19,6 +20,14 @@ RUN apk add --no-cache \
         unzip \
         xz \
         shadow
+
+# Scorecard
+ARG SCORECARD_VERSION=5.0.0
+
+RUN curl -L "https://github.com/ossf/scorecard/releases/download/v${SCORECARD_VERSION}/scorecard_${SCORECARD_VERSION}_linux_amd64.tar.gz" -o scorecard.tar.gz \
+    && tar -xzf scorecard.tar.gz \
+    && mv scorecard-linux-amd64 /usr/local/bin/scorecard \
+    && rm scorecard.tar.gz
 
 # Syft
 RUN curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh \
